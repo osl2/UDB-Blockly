@@ -5,9 +5,13 @@ Blockly.Blocks['columndefinition'] = {
             .appendField(new Blockly.FieldTextInput("columnname"), "colname");
         this.appendDummyInput()
             .appendField("PRIMARY KEY")
-            .appendField(new Blockly.FieldCheckbox("FALSE"), "primkey")
+            .appendField(new Blockly.FieldCheckbox("FALSE", function (isChecked) {
+                this.sourceBlock_.selectPrimaryKey_(isChecked)
+            }), "primkey")
             .appendField("AUTOINCREMENT")
-            .appendField(new Blockly.FieldCheckbox("FALSE"), "autoincrement");
+            .appendField(new Blockly.FieldCheckbox("FALSE", function (isChecked) {
+                this.sourceBlock_.selectAutoincrement_(isChecked)
+            }), "autoincrement");
         this.appendDummyInput()
             .appendField("NOT NULL")
             .appendField(new Blockly.FieldCheckbox("FALSE"), "null");
@@ -23,6 +27,18 @@ Blockly.Blocks['columndefinition'] = {
         this.setColour(230);
         this.setTooltip("");
         this.setHelpUrl("");
+    },
+    selectAutoincrement_: function (isChecked) {
+        //If AUTOINCREMENT is selected, PRIMARY KEY needs to be selected as well.
+        if (isChecked) {
+            this.getField('primkey').setValue(true);
+        }
+    },
+    selectPrimaryKey_: function (isChecked) {
+        //If PRIMARY KEY is deselected, AUTOINCREMENT needs to be deselected as well.
+        if (!isChecked) {
+            this.getField('autoincrement').setValue(false);
+        }
     }
 };
 
