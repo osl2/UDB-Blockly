@@ -14,6 +14,23 @@ Blockly.Blocks['block_select'] = {
     }
 };
 
+Blockly.Blocks['block_subselect'] = {
+    init: function () {
+        this.appendStatementInput("column")
+            .setCheck("column")
+            .appendField("SELECT");
+        this.appendStatementInput("table")
+            .setCheck("table")
+            .appendField("FROM");
+        this.appendStatementInput("modifiers")
+            .setCheck("selectmodifier");
+        this.setPreviousStatement(true, "subselect");
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
 Blockly.Blocks['select_join'] = {
     init: function () {
         this.appendValueInput("table")
