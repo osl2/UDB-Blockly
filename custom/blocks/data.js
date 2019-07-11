@@ -24,7 +24,9 @@ Blockly.Blocks['data_boolean_statement'] = {
 Blockly.Blocks['data_string'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField(new Blockly.FieldTextInput("value"), "string");
+            .appendField(new Blockly.FieldImage("media/quote0.png", 15, 10, "*"))
+            .appendField(new Blockly.FieldTextInput("value"), "string")
+            .appendField(new Blockly.FieldImage("media/quote1.png", 15, 10, "*"));
         this.setOutput(true, ["string", "value"]);
         this.setColour(230);
         this.setTooltip("");
@@ -35,7 +37,9 @@ Blockly.Blocks['data_string'] = {
 Blockly.Blocks['data_string_statement'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField(new Blockly.FieldTextInput("value"), "string");
+            .appendField(new Blockly.FieldImage("media/quote0.png", 15, 10, "*"))
+            .appendField(new Blockly.FieldTextInput("value"), "string")
+            .appendField(new Blockly.FieldImage("media/quote1.png", 15, 10, "*"));
         this.setPreviousStatement(true, ["string", "value"]);
         this.setNextStatement(true, ["string", "value"]);
         this.setColour(230);
