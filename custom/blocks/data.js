@@ -47,7 +47,7 @@ Blockly.Blocks['data_string_statement'] = {
 Blockly.Blocks['data_number'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField(new Blockly.FieldTextInput("0"), "number");
+            .appendField(new Blockly.FieldTextInput("0", checkNumeric), "number");
         this.setOutput(true, ["number", "value"]);
         this.setColour(230);
         this.setTooltip("");
@@ -58,7 +58,7 @@ Blockly.Blocks['data_number'] = {
 Blockly.Blocks['data_number_statement'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField(new Blockly.FieldTextInput("0"), "number");
+            .appendField(new Blockly.FieldTextInput("0", checkNumeric), "number");
         this.setPreviousStatement(true, ["number", "value"]);
         this.setNextStatement(true, ["number", "value"]);
         this.setColour(230);
@@ -136,3 +136,13 @@ Blockly.Blocks['data_datetime_statement'] = {
         this.setHelpUrl("");
     }
 };
+
+function checkNumeric(string) {
+    const exp = /^(([1-9]*)|(([1-9]*)\.([0-9]*)))$/g;
+    string = string.replace(",", ".");
+    if (string.match(exp)) {
+        return string;
+    } else {
+        return null;
+    }
+}
