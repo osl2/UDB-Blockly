@@ -1,13 +1,13 @@
 Blockly.Blocks['cond_block'] = {
     init: function () {
         this.appendValueInput("column")
-            .setCheck(["column", "literal"]);
+            .setCheck(["column", "value"]);
         this.appendDummyInput()
             .appendField(new Blockly.FieldDropdown([["=", "1"], ["<>", "2"], [">", "3"], ["<", "4"], [">=", "5"], ["<=", "6"], ["LIKE", "like"], ["IN", "in"]], function (selection) {
                 this.sourceBlock_.updateSelection_(selection)
             }), "OPERATOR");
         this.appendValueInput("value")
-            .setCheck(["column", "literal"]);
+            .setCheck(["column", "value"]);
         this.setInputsInline(false);
         this.setPreviousStatement(true, ["conditionstart", "and", "or", "not"]);
         this.setNextStatement(true, "condition");
@@ -31,12 +31,16 @@ Blockly.Blocks['cond_block'] = {
                 this.removeInput("value");
                 this.appendStatementInput("value")
                     .setCheck(["value", "subselect"]);
+            } else {
+                this.getInput("value").setCheck(["value", "subselect"]);
             }
         } else {
             if (this.getInput("value").type !== Blockly.INPUT_VALUE) {
                 this.removeInput("value");
                 this.appendValueInput("value")
-                    .setCheck(["column", "literal"]);
+                    .setCheck(["column", "value"]);
+            } else {
+                this.getInput("value").setCheck(["column", "value"]);
             }
         }
     }
