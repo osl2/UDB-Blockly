@@ -1,6 +1,6 @@
 Blockly.Blocks['block_drop'] = {
     init: function () {
-        this.appendValueInput("table")
+        this.appendValueInput("TABLE")
             .setCheck("table")
             .appendField("DROP TABLE");
         this.setColour(230);
