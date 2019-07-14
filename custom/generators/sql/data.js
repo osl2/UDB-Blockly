@@ -7,10 +7,14 @@ Blockly.SQL['data_boolean_statement'] = function(block) {
 };
 
 Blockly.SQL['data_string'] = function(block) {
-    return code;
+    var code = "";
+    code += block.getFieldValue('string');
+    return [code, Blockly.SQL.ORDER_ATOMIC];
 };
 
 Blockly.SQL['data_string_statement'] = function(block) {
+    var code = "";
+    code += block.getFieldValue('string') + ",";
     return code;
 };
 
