@@ -1,12 +1,12 @@
 Blockly.Blocks['block_update'] = {
     init: function () {
-        this.appendValueInput("table")
+        this.appendValueInput("TABLE")
             .setCheck("table")
             .appendField("UPDATE");
-        this.appendStatementInput("columntovalue")
+        this.appendStatementInput("ALLOCATIONS")
             .setCheck("columntovalue")
             .appendField("SET");
-        this.appendStatementInput("modifiers")
+        this.appendStatementInput("MODIFIER")
             .setCheck("updatemodifier");
         this.setColour(230);
         this.setTooltip("");
@@ -16,7 +16,7 @@ Blockly.Blocks['block_update'] = {
 
 Blockly.Blocks['update_where'] = {
     init: function () {
-        this.appendStatementInput("condition")
+        this.appendStatementInput("CONDITION")
             .setCheck("conditionstart")
             .appendField("WHERE");
         this.setPreviousStatement(true, "updatemodifier");
@@ -28,11 +28,11 @@ Blockly.Blocks['update_where'] = {
 
 Blockly.Blocks['columntovalue'] = {
     init: function () {
-        this.appendValueInput("column")
+        this.appendValueInput("COLUMN")
             .setCheck("column");
         this.appendDummyInput()
             .appendField("=");
-        this.appendValueInput("value")
+        this.appendValueInput("VALUE")
             .setCheck("value");
         this.setPreviousStatement(true, "columntovalue");
         this.setNextStatement(true, "columntovalue");
