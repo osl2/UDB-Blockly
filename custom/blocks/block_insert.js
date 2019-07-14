@@ -1,11 +1,11 @@
 Blockly.Blocks['block_insert'] = {
     init: function () {
-        this.appendValueInput("table")
+        this.appendValueInput("TABLE")
             .setCheck("table")
             .appendField("INSERT INTO");
-        this.appendStatementInput("column")
+        this.appendStatementInput("COLUMN")
             .setCheck("column");
-        this.appendStatementInput("value")
+        this.appendStatementInput("VALUE")
             .setCheck("value")
             .appendField("VALUES");
         this.setColour(230);
