@@ -1,12 +1,12 @@
 Blockly.Blocks['cond_block'] = {
     init: function () {
-        this.appendValueInput("column")
+        this.appendValueInput("LEFT")
             .setCheck(["column", "value"]);
         this.appendDummyInput()
-            .appendField(new Blockly.FieldDropdown([["=", "1"], ["<>", "2"], [">", "3"], ["<", "4"], [">=", "5"], ["<=", "6"], ["LIKE", "like"], ["IN", "in"]], function (selection) {
+            .appendField(new Blockly.FieldDropdown([["=", "="], ["<>", "<>"], [">", ">"], ["<", "<"], [">=", ">="], ["<=", "<="], ["LIKE", "LIKE"], ["IN", "IN"]], function (selection) {
                 this.sourceBlock_.updateSelection_(selection)
             }), "OPERATOR");
-        this.appendValueInput("value")
+        this.appendValueInput("RIGHT")
             .setCheck(["column", "value"]);
         this.setInputsInline(false);
         this.setPreviousStatement(true, ["conditionstart", "and", "or", "not"]);
@@ -18,29 +18,29 @@ Blockly.Blocks['cond_block'] = {
     updateSelection_: function (selection) {
         //If LIKE is selected the input on the second needs to be a String.
         //If IN is selected the input on the second needs to be a SELECT Statement or list of values
-        if (selection === "like") {
-            if (this.getInput("value").type !== Blockly.INPUT_VALUE) {
-                this.removeInput("value");
-                this.appendValueInput("value")
+        if (selection === "LIKE") {
+            if (this.getInput("RIGHT").type !== Blockly.INPUT_VALUE) {
+                this.removeInput("RIGHT");
+                this.appendValueInput("RIGHT")
                     .setCheck("string");
             } else {
-                this.getInput("value").setCheck("string");
+                this.getInput("RIGHT").setCheck("string");
             }
-        } else if (selection === "in") {
-            if (this.getInput("value").type === Blockly.INPUT_VALUE) {
-                this.removeInput("value");
-                this.appendStatementInput("value")
+        } else if (selection === "IN") {
+            if (this.getInput("RIGHT").type === Blockly.INPUT_VALUE) {
+                this.removeInput("RIGHT");
+                this.appendStatementInput("RIGHT")
                     .setCheck(["value", "subselect"]);
             } else {
-                this.getInput("value").setCheck(["value", "subselect"]);
+                this.getInput("RIGHT").setCheck(["value", "subselect"]);
             }
         } else {
-            if (this.getInput("value").type !== Blockly.INPUT_VALUE) {
-                this.removeInput("value");
-                this.appendValueInput("value")
+            if (this.getInput("RIGHT").type !== Blockly.INPUT_VALUE) {
+                this.removeInput("RIGHT");
+                this.appendValueInput("RIGHT")
                     .setCheck(["column", "value"]);
             } else {
-                this.getInput("value").setCheck(["column", "value"]);
+                this.getInput("RIGHT").setCheck(["column", "value"]);
             }
         }
     }
@@ -63,7 +63,7 @@ Blockly.Blocks['cond_or'] = {
         this.appendDummyInput()
             .appendField("OR");
         this.setPreviousStatement(true, "condition");
-        this.setNextStatement(true, "or");
+        this.setNextStatement(true, ["conditionstart", "or"]);
         this.setColour(230);
         this.setTooltip("");
         this.setHelpUrl("");
@@ -75,7 +75,7 @@ Blockly.Blocks['cond_and'] = {
         this.appendDummyInput()
             .appendField("AND");
         this.setPreviousStatement(true, "condition");
-        this.setNextStatement(true, "and");
+        this.setNextStatement(true, ["conditionstart", "and"]);
         this.setColour(230);
         this.setTooltip("");
         this.setHelpUrl("");

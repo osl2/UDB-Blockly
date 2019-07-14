@@ -1,12 +1,12 @@
 Blockly.Blocks['block_select'] = {
     init: function () {
-        this.appendStatementInput("column")
+        this.appendStatementInput("COLUMN")
             .setCheck("column")
             .appendField("SELECT");
-        this.appendStatementInput("table")
+        this.appendStatementInput("TABLE")
             .setCheck("table")
             .appendField("FROM");
-        this.appendStatementInput("modifiers")
+        this.appendStatementInput("MODIFIER")
             .setCheck("selectmodifier");
         this.setColour(230);
         this.setTooltip("");
@@ -16,13 +16,13 @@ Blockly.Blocks['block_select'] = {
 
 Blockly.Blocks['block_subselect'] = {
     init: function () {
-        this.appendStatementInput("column")
+        this.appendStatementInput("COLUMN")
             .setCheck("column")
             .appendField("SELECT");
-        this.appendStatementInput("table")
+        this.appendStatementInput("TABLE")
             .setCheck("table")
             .appendField("FROM");
-        this.appendStatementInput("modifiers")
+        this.appendStatementInput("MODIFIER")
             .setCheck("selectmodifier");
         this.setPreviousStatement(true, "subselect");
         this.setColour(230);
@@ -33,12 +33,12 @@ Blockly.Blocks['block_subselect'] = {
 
 Blockly.Blocks['select_join'] = {
     init: function () {
-        this.appendValueInput("table")
+        this.appendValueInput("TABLE")
             .setCheck("table")
-            .appendField(new Blockly.FieldDropdown([["NATURAL", "natural"], ["LEFT", "left"], ["LEFT OUTER", "leftouter"], ["INNER", "inner"]]), "jointype")
+            .appendField(new Blockly.FieldDropdown([["NATURAL", "NATURAL"], ["LEFT", "LEFT"], ["LEFT OUTER", "LEFT OUTER"], ["INNER", "INNER"]]), "jointype")
             .appendField("JOIN");
-        this.appendValueInput("condtion")
-            .setCheck("conditionblock")
+        this.appendStatementInput("CONDITION")
+            .setCheck("conditionstart")
             .setAlign(Blockly.ALIGN_RIGHT)
             .appendField("ON");
         this.setPreviousStatement(true, "selectmodifier");
@@ -51,8 +51,8 @@ Blockly.Blocks['select_join'] = {
 
 Blockly.Blocks['select_where'] = {
     init: function () {
-        this.appendStatementInput("condition")
-            .setCheck("conditionblock")
+        this.appendStatementInput("CONDITION")
+            .setCheck("conditionstart")
             .appendField("WHERE");
         this.setPreviousStatement(true, "selectmodifier");
         this.setNextStatement(true, "selectmodifier");
@@ -64,10 +64,10 @@ Blockly.Blocks['select_where'] = {
 
 Blockly.Blocks['select_group'] = {
     init: function () {
-        this.appendStatementInput("column")
+        this.appendStatementInput("COLUMN")
             .setCheck("column")
             .appendField("GROUP BY");
-        this.appendStatementInput("having")
+        this.appendStatementInput("MODIFIER")
             .setCheck("selectgroupmodifier");
         this.setPreviousStatement(true, "selectmodifier");
         this.setNextStatement(true, "selectmodifier");
@@ -79,8 +79,8 @@ Blockly.Blocks['select_group'] = {
 
 Blockly.Blocks['select_group_having'] = {
     init: function () {
-        this.appendStatementInput("having")
-            .setCheck("conditionblock")
+        this.appendStatementInput("CONDITION")
+            .setCheck("conditionstart")
             .appendField("HAVING");
         this.setPreviousStatement(true, "selectgroupmodifier");
         this.setColour(230);
@@ -91,7 +91,7 @@ Blockly.Blocks['select_group_having'] = {
 
 Blockly.Blocks['select_order'] = {
     init: function () {
-        this.appendStatementInput("column")
+        this.appendStatementInput("COLUMN")
             .setCheck("column")
             .appendField("ORDER BY");
         this.setPreviousStatement(true, "selectmodifier");
