@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Blockly Dev Workspace</title>
+    <script src="blockly_compressed.js"></script>
+    <script src="blocks_compressed.js"></script>
+    <script src="javascript_compressed.js"></script>
+    <script src="custom/blocks/block_alter.js"></script>
+    <script src="custom/blocks/block_create.js"></script>
+    <script src="custom/blocks/block_drop.js"></script>
+    <script src="custom/blocks/block_insert.js"></script>
+    <script src="custom/blocks/block_select.js"></script>
+    <script src="custom/blocks/block_update.js"></script>
+    <script src="custom/blocks/columndefinition.js"></script>
+    <script src="custom/blocks/conditions.js"></script>
+    <script src="custom/blocks/entities.js"></script>
+    <script src="custom/blocks/data.js"></script>
+    <script src="custom/generators/sql.js"></script>
+    <script src="custom/generators/sql/block_select.js"></script>
+    <script src="custom/generators/sql/block_drop.js"></script>
+    <script src="custom/generators/sql/block_insert.js"></script>
+    <script src="custom/generators/sql/block_update.js"></script>
+    <script src="custom/generators/sql/entities.js"></script>
+    <script src="custom/generators/sql/conditions.js"></script>
+    <script src="custom/generators/sql/data.js"></script>
+    <script src="msg/js/de.js"></script>
+    <style>
+        body {
+            background-color: #fff;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            font-weight: normal;
+            font-size: 140%;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper" style="width:100%;">
+    <div id="blocklyDiv" style="height: 800px; width: 70%; float:left"></div>
+    <div id="content" style="height: 800px; width: 25%; float:right;">Generated Code:
+        <textarea id="textarea" cols="50" rows="50">Es war dunkel, feucht und neblig …</textarea>
+    </div>
+</div>
+
+<xml id="toolbox" style="display: none">
+    <block type="alter_rename_to">
+        <field name="newname">new_tablename</field>
+    </block>
+    <block type="block_alter"></block>
+    <block type="alter_rename_column">
+        <field name="newcolumnname">new_columnname</field>
+    </block>
+    <block type="columndefinition_type">
+        <field name="TYPE">integer</field>
+        <field name="NAME">0</field>
+    </block>
+    <block type="alter_add_column"></block>
+    <block type="select_group_having"></block>
+    <block type="block_create">
+        <field name="tablename">tablename</field>
+    </block>
+    <block type="block_select"></block>
+    <block type="block_subselect"></block>
+    <block type="block_update"></block>
+    <block type="update_where"></block>
+    <block type="columndefinition">
+        <field name="colname">columnname</field>
+        <field name="primkey">FALSE</field>
+        <field name="primkeya">FALSE</field>
+        <field name="nnull">FALSE</field>
+        <field name="unique">FALSE</field>
+        <field name="default">FALSE</field>
+    </block>
+    <block type="entity_column_statement">
+        <field name="column">column</field>
+    </block>
+    <block type="select_join">
+        <field name="jointype">NATURAL</field>
+    </block>
+    <block type="block_insert"></block>
+    <block type="cond_not"></block>
+    <block type="select_where"></block>
+    <block type="select_order"></block>
+    <block type="cond_or"></block>
+    <block type="columntovalue"></block>
+    <block type="select_limit">
+        <field name="limit">1</field>
+    </block>
+    <block type="cond_and"></block>
+    <block type="select_group"></block>
+    <block type="entity_table">
+        <field name="table">table</field>
+    </block>
+    <block type="entity_table_statement">
+        <field name="table">table</field>
+    </block>
+    <block type="cond_block">
+        <field name="NAME">1</field>
+    </block>
+    <block type="entitiy_column">
+        <field name="column">column</field>
+    </block>
+    <block type="block_drop"></block>
+    <block type="data_string"></block>
+    <block type="data_string_statement"></block>
+</xml>
+
+<script>
+    let demoWorkspace = Blockly.inject('blocklyDiv',
+        {toolbox: document.getElementById('toolbox')});
+
+
+    function myUpdateFunction(event) {
+        const code = Blockly.SQL.workspaceToCode(demoWorkspace);
+        document.getElementById('textarea').value = code;
+    }
+
+    demoWorkspace.addChangeListener(myUpdateFunction);
+</script>
+
+</body>
+</html>
