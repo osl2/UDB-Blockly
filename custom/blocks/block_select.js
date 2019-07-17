@@ -9,7 +9,7 @@ Blockly.Blocks['block_select'] = {
         this.appendStatementInput("MODIFIER")
             .setCheck("selectmodifier");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_SELECT);
         this.setHelpUrl("");
     }
 };
@@ -26,7 +26,7 @@ Blockly.Blocks['block_subselect'] = {
             .setCheck("selectmodifier");
         this.setPreviousStatement(true, "subselect");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_SELECT);
         this.setHelpUrl("");
     }
 };
@@ -44,7 +44,7 @@ Blockly.Blocks['select_join'] = {
         this.setPreviousStatement(true, "selectmodifier");
         this.setNextStatement(true, "selectmodifier");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_SELECT_JOIN);
         this.setHelpUrl("");
     }
 };
@@ -57,7 +57,7 @@ Blockly.Blocks['select_where'] = {
         this.setPreviousStatement(true, "selectmodifier");
         this.setNextStatement(true, "selectmodifier");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_SELECT_WHERE);
         this.setHelpUrl("");
     }
 };
@@ -72,7 +72,7 @@ Blockly.Blocks['select_group'] = {
         this.setPreviousStatement(true, "selectmodifier");
         this.setNextStatement(true, "selectmodifier");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_SELECT_GROUP);
         this.setHelpUrl("");
     }
 };
@@ -84,7 +84,7 @@ Blockly.Blocks['select_group_having'] = {
             .appendField("HAVING");
         this.setPreviousStatement(true, "selectgroupmodifier");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_SELECT_GROUP_HAVING);
         this.setHelpUrl("");
     }
 };
@@ -97,7 +97,7 @@ Blockly.Blocks['select_order'] = {
         this.setPreviousStatement(true, "selectmodifier");
         this.setNextStatement(true, "selectmodifier");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_SELECT_ORDER);
         this.setHelpUrl("");
     }
 };
@@ -110,7 +110,7 @@ Blockly.Blocks['select_limit'] = {
         this.setPreviousStatement(true, "selectmodifier");
         this.setNextStatement(true, "selectmodifier");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_SELECT_LIMIT);
         this.setHelpUrl("");
     }
 };

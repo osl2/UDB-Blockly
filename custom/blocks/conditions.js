@@ -12,7 +12,7 @@ Blockly.Blocks['cond_block'] = {
         this.setPreviousStatement(true, ["conditionstart", "and", "or", "not"]);
         this.setNextStatement(true, "condition");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_CONDITION);
         this.setHelpUrl("");
     },
     updateSelection_: function (selection) {
@@ -53,7 +53,7 @@ Blockly.Blocks['cond_not'] = {
         this.setPreviousStatement(true, "conditionstart");
         this.setNextStatement(true, "not");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_CONDITION_NOT);
         this.setHelpUrl("");
     }
 };
@@ -65,7 +65,7 @@ Blockly.Blocks['cond_or'] = {
         this.setPreviousStatement(true, "condition");
         this.setNextStatement(true, ["conditionstart", "or"]);
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_CONDITION_OR);
         this.setHelpUrl("");
     }
 };
@@ -77,7 +77,7 @@ Blockly.Blocks['cond_and'] = {
         this.setPreviousStatement(true, "condition");
         this.setNextStatement(true, ["conditionstart", "and"]);
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_CONDITION_AND);
         this.setHelpUrl("");
     }
 };

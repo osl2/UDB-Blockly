@@ -9,7 +9,7 @@ Blockly.Blocks['block_insert'] = {
             .setCheck("value")
             .appendField("VALUES");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_INSERT);
         this.setHelpUrl("");
     }
 };

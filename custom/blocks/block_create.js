@@ -7,7 +7,7 @@ Blockly.Blocks['block_create'] = {
         this.appendStatementInput("COLUMNDEFINITION")
             .setCheck("columndefinition");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_CREATE);
         this.setHelpUrl("");
     }
 };

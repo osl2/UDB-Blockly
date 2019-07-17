@@ -9,7 +9,7 @@ Blockly.Blocks['block_update'] = {
         this.appendStatementInput("MODIFIER")
             .setCheck("updatemodifier");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_UPDATE);
         this.setHelpUrl("");
     }
 };
@@ -21,7 +21,7 @@ Blockly.Blocks['update_where'] = {
             .appendField("WHERE");
         this.setPreviousStatement(true, "updatemodifier");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_UPDATE_WHERE);
         this.setHelpUrl("");
     }
 };
@@ -37,7 +37,7 @@ Blockly.Blocks['columntovalue'] = {
         this.setPreviousStatement(true, "columntovalue");
         this.setNextStatement(true, "columntovalue");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_UPDATE_COLUMNTOVALUE);
         this.setHelpUrl("");
     }
 };

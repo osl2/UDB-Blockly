@@ -6,7 +6,7 @@ Blockly.Blocks['block_alter'] = {
         this.appendStatementInput("MODIFIER")
             .setCheck("altermodifier");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_ALTER);
         this.setHelpUrl("");
     }
 };
@@ -20,7 +20,7 @@ Blockly.Blocks['alter_rename_to'] = {
         this.setPreviousStatement(true, "altermodifier");
         this.setNextStatement(true, "altermodifier");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_ALTER_RENAME);
         this.setHelpUrl("");
     }
 };
@@ -39,7 +39,7 @@ Blockly.Blocks['alter_rename_column'] = {
         this.setPreviousStatement(true, "altermodifier");
         this.setNextStatement(true, "altermodifier");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_ALTER_RENAME_COLUMN);
         this.setHelpUrl("");
     }
 };
@@ -53,7 +53,7 @@ Blockly.Blocks['alter_add_column'] = {
         this.setPreviousStatement(true, "altermodifier");
         this.setNextStatement(true, "altermodifier");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_ALTER_ADD_COLUMN);
         this.setHelpUrl("");
     }
 };

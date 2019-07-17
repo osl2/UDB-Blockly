@@ -4,7 +4,7 @@ Blockly.Blocks['data_boolean'] = {
             .appendField(new Blockly.FieldDropdown([["true", "TRUE"], ["false", "FALSE"]]), "BOOLEAN");
         this.setOutput(true, ["boolean", "value"]);
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.DATAELEMENT_BOOL);
         this.setHelpUrl("");
     }
 };
@@ -16,7 +16,7 @@ Blockly.Blocks['data_boolean_statement'] = {
         this.setPreviousStatement(true, ["boolean", "value"]);
         this.setNextStatement(true, ["boolean", "value"]);
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.DATAELEMENT_BOOL);
         this.setHelpUrl("");
     }
 };
@@ -29,7 +29,7 @@ Blockly.Blocks['data_string'] = {
             .appendField(new Blockly.FieldImage("media/quote1.png", 15, 10, "*"));
         this.setOutput(true, ["string", "value"]);
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.DATAELEMENT_STRING);
         this.setHelpUrl("");
     }
 };
@@ -43,7 +43,7 @@ Blockly.Blocks['data_string_statement'] = {
         this.setPreviousStatement(true, ["string", "value"]);
         this.setNextStatement(true, ["string", "value"]);
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.DATAELEMENT_STRING);
         this.setHelpUrl("");
     }
 };
@@ -54,7 +54,7 @@ Blockly.Blocks['data_number'] = {
             .appendField(new Blockly.FieldTextInput("0", checkNumeric), "NUMBER");
         this.setOutput(true, ["number", "value"]);
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.DATAELEMENT_NUMBER);
         this.setHelpUrl("");
     }
 };
@@ -66,7 +66,7 @@ Blockly.Blocks['data_number_statement'] = {
         this.setPreviousStatement(true, ["number", "value"]);
         this.setNextStatement(true, ["number", "value"]);
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.DATAELEMENT_NUMBER);
         this.setHelpUrl("");
     }
 };
@@ -81,7 +81,7 @@ Blockly.Blocks['data_date'] = {
             .appendField(new Blockly.FieldNumber(2019, -9999, 9999, 1), "YEAR");
         this.setOutput(true, ["string", "value"]);
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.DATAELEMENT_DATE);
         this.setHelpUrl("");
     }
 };
@@ -97,7 +97,7 @@ Blockly.Blocks['data_date_statement'] = {
         this.setPreviousStatement(true, ["string", "value"]);
         this.setNextStatement(true, ["string", "value"]);
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.DATAELEMENT_DATE);
         this.setHelpUrl("");
     }
 };
@@ -116,7 +116,7 @@ Blockly.Blocks['data_datetime'] = {
             .appendField(new Blockly.FieldNumber(1, 1, 31, 1), "MINUTE");
         this.setOutput(true, ["string", "value"]);
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.DATAELEMENT_DATETIME);
         this.setHelpUrl("");
     }
 };
@@ -136,7 +136,7 @@ Blockly.Blocks['data_datetime_statement'] = {
         this.setPreviousStatement(true, ["string", "value"]);
         this.setNextStatement(true, ["string", "value"]);
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.DATAELEMENT_DATETIME);
         this.setHelpUrl("");
     }
 };

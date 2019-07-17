@@ -4,7 +4,7 @@ Blockly.Blocks['block_drop'] = {
             .setCheck("table")
             .appendField("DROP TABLE");
         this.setColour(230);
-        this.setTooltip("");
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_DROP);
         this.setHelpUrl("");
     }
 };
