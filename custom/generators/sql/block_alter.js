@@ -32,7 +32,7 @@ Blockly.SQL['alter_rename_column'] = function(block) {
 
 Blockly.SQL['alter_add_column'] = function(block) {
     var code = "";
-    var columndefinition = Blockly.SQL.valueToCode(block, 'COLUMNDEFINITION', Blockly.SQL.ORDER_ATOMIC).trim();
+    var columndefinition = Blockly.SQL.statementToCode(block, 'COLUMNDEFINITION', Blockly.SQL.ORDER_ATOMIC).trim();
     code += "\nADD COLUMN " + columndefinition;
     return code;
 };

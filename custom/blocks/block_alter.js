@@ -4,7 +4,7 @@ Blockly.Blocks['block_alter'] = {
             .setCheck("table")
             .appendField("ALTER TABLE");
         this.appendStatementInput("MODIFIER")
-            .setCheck(null);
+            .setCheck("altermodifier");
         this.setColour(230);
         this.setTooltip("");
         this.setHelpUrl("");
