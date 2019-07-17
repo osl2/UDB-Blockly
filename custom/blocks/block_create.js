@@ -1,9 +1,10 @@
 Blockly.Blocks['block_create'] = {
     init: function () {
-        this.appendDummyInput()
-            .appendField("CREATE TABLE")
-            .appendField(new Blockly.FieldTextInput("tablename"), "tablename");
-        this.appendStatementInput("columndefinitions")
+        this.appendValueInput("TABLE")
+            .setCheck("string")
+            .appendField("CREATE TABLE");
+            //.appendField(new Blockly.FieldTextInput("tablename"), "tablename");
+        this.appendStatementInput("COLUMNDEFINITION")
             .setCheck("columndefinition");
         this.setColour(230);
         this.setTooltip("");
