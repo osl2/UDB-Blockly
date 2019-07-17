@@ -14,14 +14,13 @@ Blockly.SQL['block_select'] = function (block) {
     tables = tables.substring(0, tables.length - 1); // Remove last ,
     var tablesArray = createArrayOfString(tables, ",");
     var tablelist = "";
-    var modifier = Blockly.SQL.statementToCode(block, 'MODIFIER');
-    modifier = modifier.substring(2, modifier.length); // Remove first \n
+    var modifier = Blockly.SQL.statementToCode(block, 'MODIFIER').trim();
     var modifierArray = createArrayOfString(modifier, "\n");
     var modifierlist = "";
 
     //Build columns list
     //If columns is empty select everything
-    if (columns.length == 0) {
+    if (columns.length === 0) {
         columnlist = "*";
     } else {
         //Separate each entry with an ,
