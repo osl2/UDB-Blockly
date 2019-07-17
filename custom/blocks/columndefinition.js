@@ -32,7 +32,7 @@ Blockly.Blocks['columndefinition'] = {
         this.setPreviousStatement(true, "columndefinition");
         this.setNextStatement(true, "columndefinition");
         this.setColour(230);
-        this.setTooltip(Blockly.Msg.Custom.DATAELEMENT_DATE);
+        this.setTooltip(Blockly.Msg.Custom.BLOCK_COLUMNDEFINITION);
         this.setHelpUrl("");
     },
     selectAutoincrement_: function (isChecked) {
