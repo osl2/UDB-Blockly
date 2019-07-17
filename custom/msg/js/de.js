@@ -1,3 +1,7 @@
+/**
+ * @fileoverview German strings for custom Blocks.
+ * @author marcus@marcusleib.com
+ */
 'use strict';
 
 goog.provide('Blockly.Msg.Custom.de');
@@ -15,7 +19,7 @@ Blockly.Msg.Custom["BLOCK_CONDITION"] = "Dieser Block erzeugt einen Vergleich\nL
 Blockly.Msg.Custom["BLOCK_CONDITION_NOT"] = "Negiert die folgende Aussage";
 Blockly.Msg.Custom["BLOCK_CONDITION_OR"] = "Verbindet zwei Aussagen mit einem logischen ODER";
 Blockly.Msg.Custom["BLOCK_CONDITION_AND"] = "Verbindet zwei Aussagen mit einem logischen UND";
-Blockly.Msg.Custom["Block_COLUMNDEFINITION"] = "Beschreibt eine neue Spalte\nNeben Name und Typ, können die notwendigen Bedingungen angepasst werden.";
+Blockly.Msg.Custom["BLOCK_COLUMNDEFINITION"] = "Beschreibt eine neue Spalte\nNeben Name und Typ, können die notwendigen Bedingungen angepasst werden.";
 Blockly.Msg.Custom["BLOCK_UPDATE"] = "Dieser Block erzeugt einen UPDATE-Befehl.\nDurch Einsatz eines WHERE Blocks kann das Befehl eingeschränkt werden.";
 Blockly.Msg.Custom["BLOCK_UPDATE_WHERE"] = "Dieser Block schränkt den Wirkungsbereich des zugeordneten UPDATE Blocks ein.";
 Blockly.Msg.Custom["BLOCK_UPDATE_COLUMNTOVALUE"] = "Zuordnung von Spaltenname zum neuen Wert dieser Spalte.\nDurch Einsatz eines WHERE Blocks kann das Befehl eingeschränkt werden.";
