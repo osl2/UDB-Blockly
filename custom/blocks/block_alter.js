@@ -1,9 +1,9 @@
 Blockly.Blocks['block_alter'] = {
     init: function () {
-        this.appendValueInput("table")
+        this.appendValueInput("TABLE")
             .setCheck("table")
             .appendField("ALTER TABLE");
-        this.appendStatementInput("modifier")
+        this.appendStatementInput("MODIFIER")
             .setCheck(null);
         this.setColour(230);
         this.setTooltip("");
@@ -13,10 +13,10 @@ Blockly.Blocks['block_alter'] = {
 
 Blockly.Blocks['alter_rename_to'] = {
     init: function () {
-        this.appendValueInput("renameto")
-            .setCheck(null)
-            .appendField("RENAME TO")
-            .appendField(new Blockly.FieldTextInput("new_tablename"), "newname");
+        this.appendValueInput("NEWNAME")
+            .setCheck("string")
+            .appendField("RENAME TO");
+            //.appendField(new Blockly.FieldTextInput("new_tablename"), "newname");
         this.setPreviousStatement(true, "altermodifier");
         this.setNextStatement(true, "altermodifier");
         this.setColour(230);
@@ -27,13 +27,14 @@ Blockly.Blocks['alter_rename_to'] = {
 
 Blockly.Blocks['alter_rename_column'] = {
     init: function () {
-        this.appendValueInput("column")
+        this.appendValueInput("COLUMN")
             .setCheck("column")
             .appendField("RENAME COLUMN");
-        this.appendDummyInput()
+        this.appendValueInput("NEWNAME")
+            .setCheck("string")
             .setAlign(Blockly.ALIGN_RIGHT)
-            .appendField("TO")
-            .appendField(new Blockly.FieldTextInput("new_columnname"), "newcolumnname");
+            .appendField("TO");
+            //.appendField(new Blockly.FieldTextInput("new_columnname"), "newcolumnname");
         this.setInputsInline(false);
         this.setPreviousStatement(true, "altermodifier");
         this.setNextStatement(true, "altermodifier");
@@ -45,7 +46,7 @@ Blockly.Blocks['alter_rename_column'] = {
 
 Blockly.Blocks['alter_add_column'] = {
     init: function () {
-        this.appendStatementInput("columndefinition")
+        this.appendStatementInput("COLUMNDEFINITION")
             .setCheck("columndefinition")
             .appendField("ADD COLUMN");
         this.setInputsInline(false);
