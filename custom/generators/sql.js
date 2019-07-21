@@ -113,14 +113,10 @@ Blockly.SQL.scrub_ = function (block, code, opt_thisOnly) {
         var comment = block.getCommentText();
         comment = Blockly.utils.wrap(comment, Blockly.SQL.COMMENT_WRAP - 3);
         if (comment) {
-            if (block.getProcedureDef) {
-                // Use a comment block for function comments.
-                commentCode += '/**\n' +
-                    Blockly.SQL.prefixLines(comment + '\n', ' * ') +
-                    ' */\n';
-            } else {
-                commentCode += Blockly.SQL.prefixLines(comment + '*/\n', '/* ');
-            }
+            // Use a comment block for function comments.
+            commentCode += '/*\n' +
+                Blockly.SQL.prefixLines(comment + '\n', ' * ') +
+                ' */\n';
         }
         // Collect comments for all value arguments.
         // Don't collect comments for nested statements.
@@ -130,7 +126,9 @@ Blockly.SQL.scrub_ = function (block, code, opt_thisOnly) {
                 if (childBlock) {
                     var comment = Blockly.SQL.allNestedComments(childBlock);
                     if (comment) {
-                        commentCode += Blockly.SQL.prefixLines(comment + '*/\n', '/* ');
+                        commentCode += '/*\n' +
+                            Blockly.SQL.prefixLines(comment + '\n', ' * ') +
+                            ' */\n';
                     }
                 }
             }
