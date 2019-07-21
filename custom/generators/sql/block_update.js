@@ -4,7 +4,7 @@ Blockly.SQL['block_update'] = function(block) {
     var allocations = Blockly.SQL.statementToCode(block, 'ALLOCATIONS').trim();
         allocations = allocations.substring(0, allocations.length - 1); // Remove last ,
     var modifier = Blockly.SQL.statementToCode(block, 'MODIFIER').trim();
-    code += "UPDATE " + table + "\nSET " + allocations + "\n" + modifier;
+    code += "UPDATE " + table + "\nSET " + allocations + "\n" + modifier + ";";
     return code;
 };
 

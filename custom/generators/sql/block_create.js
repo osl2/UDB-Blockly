@@ -13,6 +13,6 @@ Blockly.SQL['block_create'] = function(block) {
     columndefinitionlist = columndefinitionlist.substring(0, columndefinitionlist.length - 2);
 
     //Build return value
-    code += "CREATE TABLE " + table + " (" + columndefinitionlist + ")";
+    code += "CREATE TABLE " + table + " (" + columndefinitionlist + ");";
     return code;
 };

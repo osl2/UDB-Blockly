@@ -11,7 +11,7 @@ Blockly.SQL['block_alter'] = function(block) {
     }
 
     //Build return value
-    code += "ALTER TABLE " + table + "\n" + modifierlist;
+    code += "ALTER TABLE " + table + "\n" + modifierlist + ";";
     return code;
 };
 

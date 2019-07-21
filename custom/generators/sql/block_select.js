@@ -45,14 +45,15 @@ Blockly.SQL['block_select'] = function (block) {
     }
 
     //Build return value
-    code += "SELECT " + columnlist + "\nFROM " + tablelist + modifierlist;
+    code += "SELECT " + columnlist + "\nFROM " + tablelist + modifierlist + ";";
 
     return code;
 };
 
 Blockly.SQL['block_subselect'] = function (block) {
     var code = "";
-    code += "(" + Blockly.SQL['block_select'](block) + ")";
+    var generatedcode = Blockly.SQL['block_select'](block);
+    code += "(" + generatedcode.substring(0, generatedcode.length - 1) + ")";
     return code;
 };
 

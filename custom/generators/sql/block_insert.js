@@ -10,6 +10,6 @@ Blockly.SQL['block_insert'] = function(block) {
     var valuesArray = createArrayOfString(values, ",");
     var valuelist = generateSeparatedList(valuesArray, ", ");
 
-    code += "INSERT INTO " + table + "(" + columnlist + ")\n" + "VALUES (" + valuelist + ")";
+    code += "INSERT INTO " + table + "(" + columnlist + ")\n" + "VALUES (" + valuelist + ");";
     return code;
 };
