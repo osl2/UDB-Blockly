@@ -23,14 +23,12 @@ Blockly.SQL['data_boolean_statement'] = function(block) {
 };
 
 Blockly.SQL['data_string'] = function(block) {
-    var code = "";
-    code += block.getFieldValue('STRING');
+    var code = Blockly.SQL.quote_(block.getFieldValue('STRING'));
     return [code, Blockly.SQL.ORDER_ATOMIC];
 };
 
 Blockly.SQL['data_string_statement'] = function(block) {
-    var code = "";
-    code += block.getFieldValue('STRING');
+    var code = Blockly.SQL.quote_(block.getFieldValue('STRING'));
     return code + ",";
 };
 
