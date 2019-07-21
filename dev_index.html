@@ -50,6 +50,13 @@
 </div>
 
 <xml id="toolbox" style="display: none">
+    <category name="ALTER">
+        <block type="block_alter"></block>
+        <block type="alter_rename_to"></block>
+        <block type="alter_rename_column"></block>
+        <block type="alter_add_column"></block>
+        <block type="columndefinition"></block>
+    </category>
     <category name="CREATE" colour="#5ba56d">
         <block type="block_create">
             <value name="TABLE">
@@ -58,17 +65,7 @@
                 </shadow>
             </value>
         </block>
-    </category>
-    <category name="ALTER">
-        <block type="block_alter"></block>
-        <block type="alter_rename_to"></block>
-        <block type="alter_rename_column"></block>
-        <block type="alter_add_column"></block>
-        <block type="columndefinition"></block>
-    </category>
-    <category name="CREATE">
-        <block type="block_create"></block>
-        <block type="columndefinition"></block>
+		<block type="columndefinition"></block>
     </category>
     <category name="DROP">
         <block type="block_drop"></block>
@@ -77,7 +74,9 @@
         <block type="block_insert"></block>
     </category>
     <category name="SELECT">
-        <block type="block_select"></block>
+        <block type="block_select">
+
+        </block>
         <block type="block_subselect"></block>
         <block type="select_join"></block>
         <block type="select_where"></block>
@@ -122,7 +121,8 @@
 
 <script>
     let demoWorkspace = Blockly.inject('blocklyDiv',
-        {toolbox: document.getElementById('toolbox')});
+        {toolbox: document.getElementById('toolbox'),
+            maxInstances: {'block_select': 1}});
 
 
     function myUpdateFunction(event) {
