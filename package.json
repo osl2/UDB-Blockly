@@ -9,7 +9,6 @@
   "license": "Apache-2.0",
   "scripts": {
     "upgrade-blockly": "git submodule init && git submodule update --recursive --remote",
-    "compress": "gulp compress",
     "generate": "gulp generate"
   },
   "files": [

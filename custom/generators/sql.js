@@ -85,6 +85,7 @@ Blockly.SQL.scrubNakedValue = function (line) {
  * @param {string} string Text to encode.
  * @return {string} SQL string.
  * @private
+ * TODO QUOTE PRÜFEN!
  */
 Blockly.SQL.quote_ = function (string) {
     // Can't use goog.string.quote since Google's style guide recommends

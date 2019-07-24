@@ -87,13 +87,14 @@ function language_files_custom() {
 }
 
 exports.compress = gulp.series(
+
+);
+
+exports.generate = gulp.series(
     merge_custom_blocks,
     merge_sql_generators,
     compress_custom_blocks,
     compress_sql_generators
-);
-
-exports.generate = gulp.series(
     blockly,
     custom_blocks,
     sql,
