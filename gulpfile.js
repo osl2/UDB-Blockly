@@ -86,15 +86,11 @@ function language_files_custom() {
         .pipe(gulp.dest('dist/i18n/custom/'))
 }
 
-exports.compress = gulp.series(
-
-);
-
 exports.generate = gulp.series(
     merge_custom_blocks,
     merge_sql_generators,
     compress_custom_blocks,
-    compress_sql_generators
+    compress_sql_generators,
     blockly,
     custom_blocks,
     sql,
