@@ -112,7 +112,6 @@ Blockly.SQL.scrub_ = function (block, code, opt_thisOnly) {
     if (!block.outputConnection || !block.outputConnection.targetConnection) {
         // Collect comment for this block.
         var comment = block.getCommentText();
-        comment = Blockly.utils.wrap(comment, Blockly.SQL.COMMENT_WRAP - 3);
         if (comment) {
             // Use a comment block for function comments.
             commentCode += '/*\n' +
