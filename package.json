@@ -1,6 +1,6 @@
 {
   "name": "blockly-sql",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "description": "Blockly with SQL related blocks and generators",
   "main": "index.js",
