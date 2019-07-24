@@ -1,0 +1,28 @@
+image: node:latest
+stages:
+  - prepare
+  - build
+
+cache:
+  paths:
+    - node_modules/
+
+yarn:
+  stage: prepare
+  script:
+    - yarn install
+
+submodule:
+  stage: prepare
+  script:
+    - git submodule init && git submodule update
+
+build:
+  stage: build
+  script:
+    - yarn generate
+  artifacts:
+    paths:
+    - dist/
+    - index.js
+    - package.json
