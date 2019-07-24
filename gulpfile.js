@@ -10,6 +10,7 @@ var gulp = require('gulp'),
 function blockly() {
     return gulp.src('blockly/blockly_compressed.js')
         .pipe(replace(/goog\.global\s*=\s*this;/, 'goog.global=window;'))
+        .pipe(replace('this.navigator&&this.navigator.', 'window.navigator&&window.navigator.'))
         .pipe(insert.wrap(
             `module.exports = (function(){`,
             `Blockly.goog=goog;return Blockly;})()`))
