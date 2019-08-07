@@ -1,5 +1,5 @@
 Blockly.SQL['cond_block'] = function(block) {
-    code = "";
+    var code = "";
     var left = Blockly.SQL.valueToCode(block, 'LEFT', Blockly.SQL.ORDER_ATOMIC);
     var operator = block.getFieldValue('OPERATOR');
     var right = "";
@@ -24,19 +24,19 @@ Blockly.SQL['cond_block'] = function(block) {
 };
 
 Blockly.SQL['cond_not'] = function(block) {
-    code = "";
+    var code = "";
     code += "NOT ";
     return code;
 };
 
 Blockly.SQL['cond_or'] = function(block) {
-    code = "";
+    var code = "";
     code += "OR ";
     return code;
 };
 
 Blockly.SQL['cond_and'] = function(block) {
-    code = "";
+    var code = "";
     code += "AND ";
     return code;
 };

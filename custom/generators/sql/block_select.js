@@ -1,9 +1,3 @@
-'use strict';
-
-goog.provide('Blockly.SQL.block_select');
-
-goog.require('Blockly.SQL');
-
 Blockly.SQL['block_select'] = function (block) {
     var code = "";
     var columns = Blockly.SQL.statementToCode(block, 'COLUMN');
