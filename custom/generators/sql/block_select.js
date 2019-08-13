@@ -39,7 +39,7 @@ Blockly.SQL['block_select'] = function (block) {
     }
 
     //Build return value
-    code += "SELECT " + columnlist + "\nFROM " + tablelist + modifierlist + ";";
+    code += "SELECT " + columnlist + "\nFROM " + tablelist + " " + modifierlist + ";";
 
     return code;
 };

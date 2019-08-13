@@ -276,9 +276,10 @@ Blockly.SQL['block_insert'] = function(block) {
     var valuesArray = createArrayOfString(values, ",");
     var valuelist = generateSeparatedList(valuesArray, ", ");
 
-    code += "INSERT INTO " + table + "(" + columnlist + ")\n" + "VALUES (" + valuelist + ");";
+    code += "INSERT INTO " + table + " (" + columnlist + ")\n" + "VALUES (" + valuelist + ");";
     return code;
 };
+
 Blockly.SQL['block_select'] = function (block) {
     var code = "";
     var columns = Blockly.SQL.statementToCode(block, 'COLUMN');
@@ -320,7 +321,7 @@ Blockly.SQL['block_select'] = function (block) {
     }
 
     //Build return value
-    code += "SELECT " + columnlist + "\nFROM " + tablelist + modifierlist + ";";
+    code += "SELECT " + columnlist + "\nFROM " + tablelist + " " + modifierlist + ";";
 
     return code;
 };
@@ -399,6 +400,7 @@ function generateSeparatedList(array, separator) {
 
     return list;
 }
+
 Blockly.SQL['block_update'] = function(block) {
     var code = "";
     var table = Blockly.SQL.valueToCode(block, 'TABLE', Blockly.SQL.ORDER_ATOMIC).trim();
